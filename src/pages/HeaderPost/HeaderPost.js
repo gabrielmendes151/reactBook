@@ -1,23 +1,17 @@
-import { Container, Post, Header } from './Styled';
+import { Container, PostHeader } from './Styled';
 import React, { Component, Fragment } from 'react';
+import Header from './Header'
 
 class HeaderPost extends Component {
   render() {
-    const { posts } = this.props;
-
+    const { img, nome, tempoDoPost, postagem } = this.props;
     return (
       <Fragment>
-        {posts.map(post => {
-          return (
-            <Container>
-              <Post>
-                <Header>
-                  <img src={post.img} alt={post.nome} />
-                </Header>
-              </Post>
-            </Container>
-          );
-        })}
+        <Container>
+          <PostHeader>
+            <Header img={img} nome={nome} tempoDoPost={tempoDoPost} postagem={postagem} />
+          </PostHeader>
+        </Container>
       </Fragment>
     );
   }
